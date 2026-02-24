@@ -1,26 +1,52 @@
-// lab1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "header.h"
 
-#include <iostream>
 
-int main()
+int Sum(int a, int b) { return a + b; }
+int Dif(int a, int b) { return a - b; }
+int Mul(int a, int b) { return a * b; }
+int Div(int a, int b) { return a / b; }
+
+int main(int argc, char* argv[])
 {
-    int x, y;
-	std::cout << "Enter two numbers: ";
-	std::cin >> x >> y;
-	int z;
-	z = x + y;
-	std::cout << "The sum of " << x << " and " << y << " is " << z << std::endl;
-    std::cout << "Hello World!\n";
+
+    char input[] = "---H***E+++L+++L///O---P+++O/+-**O---";
+   
+    func Operatori[4] = { Sum, Dif, Mul, Div };
+
+    int S = 0;
+    Content x;
+    int idx = 0;
+
+    for (int i = 0; i < strlen(input); i++)
+    {
+        switch (input[i] - 42)
+        {
+        case INMULTIRE:
+            idx = 2;
+            x.p1 = 3;
+            x.p2 = 3;
+            break; 
+        case SUMA:
+            idx = 0;
+            x.p1 = 7;
+            x.p2 = 5;
+            break;
+        case DIFERENTA:
+            idx = 1;
+            x.p1 = 10;
+            x.p2 = 1;
+            break;
+        case IMPARTIRE:
+            idx = 3;
+            x.p1 = 8;
+            x.p2 = 4;
+            break;
+        }
+
+        S = S + Operatori[idx](x.p1, x.p2);
+    }
+
+    printf("S = %d\n", S);
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
