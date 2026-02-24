@@ -5,6 +5,12 @@
 
 int main()
 {
+    int x, y;
+	std::cout << "Enter two numbers: ";
+	std::cin >> x >> y;
+	int z;
+	z = x + y;
+	std::cout << "The sum of " << x << " and " << y << " is " << z << std::endl;
     std::cout << "Hello World!\n";
 }
 
